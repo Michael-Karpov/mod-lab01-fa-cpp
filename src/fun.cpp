@@ -1,8 +1,8 @@
 // Copyright 2022 UNN-IASR
+#include "fun.h"
+#include <ctype.h>
 #include <string>
 #include <cmath>
-#include <ctype.h>
-#include "fun.h"
 
 unsigned int faStr1(const char *str) {
      int w = 0;
