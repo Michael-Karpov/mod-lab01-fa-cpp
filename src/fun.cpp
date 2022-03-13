@@ -1,12 +1,11 @@
 // Copyright 2022 UNN-IASR
-#include "fun.h"
 #include <iostream>
 #include <string>
 #include <locale.h>
 #include <cmath>
-#include "time.h"
 #include <stdio.h>
 #include <ctype.h>
+#include "fun.h"
 
 unsigned int faStr1(const char *str) {
      int w = 0;
@@ -30,9 +29,8 @@ unsigned int faStr1(const char *str) {
             if (s == true) {
                 w++;
             }
-        }
-        else {
-            if (str[i] == ' ') {
+        } else {
+             if (str[i] == ' ') {
                 f = false;
                 s = true;
             }
@@ -66,9 +64,8 @@ unsigned int faStr2(const char *str) {
                     w++;
                 }
             }
-        }
-        else {
-            if (str[i] == ' ') {
+        } else {
+             if (str[i] == ' ') {
                 f = false;
                 s = true;
             }
@@ -95,9 +92,8 @@ unsigned int faStr3(const char *str) {
             f = true;
             w++;
             int k = i;
-        }
-        else {
-            if (str[i] == ' ') {
+        } else {
+             if (str[i] == ' ') {
                 f = false;
             }
         }
