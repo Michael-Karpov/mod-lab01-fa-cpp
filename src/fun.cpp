@@ -75,5 +75,31 @@ unsigned int faStr2(const char *str) {
 }
 
 unsigned int faStr3(const char *str) {
-    return 0;
+        int i = 0;
+    int w = 0;
+    int sym = 0;
+    bool f = false;
+    int x = 0;
+
+    while (str[i] == ' ' && str[i] != '\0') {
+        i++;
+    }
+
+    while (str[i] != '\0') {
+        if (str[i] != ' ') {
+            sym++;
+        }
+        if (str[i] != ' ' && f == false) {
+            f = true;
+            w++;
+            int k = i;
+        }
+        else if (str[i] == ' ') {
+            f = false;
+        }
+        i++;
+    }
+
+    x = int(double(sym) / w + 0.5);
+    return x;
 }
