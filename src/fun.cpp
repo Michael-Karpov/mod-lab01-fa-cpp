@@ -2,27 +2,35 @@
 #include "fun.h"
 
 unsigned int faStr1(const char *str) {
-        
+    
     int w = 0;
     bool f = false;
     int i = 0;
+    bool s = true;
 
     while (str[i] == ' ' && str[i] != '\0') {
         i++;
     }
 
     while (str[i] != '\0') {
-        if (!isdigit(str[i])) {
-            if (str[i] != ' ' && f == false) {
-                f = true;
+        if (str[i] != ' ' && f == false) {
+            f = true;
+            int k = i;
+            while (str[k] != ' ') {
+                if (isdigit(str[k])) {
+                    s = false;
+                    k++;
+                }
+                k++;
+            }
+            if (s == true) {
                 w++;
             }
-            else if (str[i] == ' ') {
-                f = false;
-            }
         }
-        else w--;
-
+        else if (str[i] == ' ') {
+            f = false;
+            s = true;
+        }
         i++;
     }
 
