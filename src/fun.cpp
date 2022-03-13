@@ -1,17 +1,21 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
+#include <iostream>
+#include <string>
+#include <locale.h>
+#include <cmath>
+#include "time.h"
+#include <stdio.h>
+#include <ctype.h>
 
 unsigned int faStr1(const char *str) {
-    
-    int w = 0;
+     int w = 0;
     bool f = false;
     int i = 0;
     bool s = true;
-
     while (str[i] == ' ' && str[i] != '\0') {
         i++;
     }
-
     while (str[i] != '\0') {
         if (str[i] != ' ' && f == false) {
             f = true;
@@ -27,13 +31,14 @@ unsigned int faStr1(const char *str) {
                 w++;
             }
         }
-        else if (str[i] == ' ') {
-            f = false;
-            s = true;
+        else {
+            if (str[i] == ' ') {
+                f = false;
+                s = true;
+            }
         }
         i++;
     }
-
     return w;
 }
 
@@ -42,11 +47,9 @@ unsigned int faStr2(const char *str) {
     int w = 0;
     bool f = false;
     bool s = true;
-
     while (str[i] == ' ' && str[i] != '\0') {
         i++;
     }
-
     while (str[i] != '\0') {
         if (str[i] != ' ' && f == false) {
             f = true;
@@ -62,29 +65,28 @@ unsigned int faStr2(const char *str) {
                 if (s == true) {
                     w++;
                 }
-            } 
+            }
         }
-        else if (str[i] == ' ') {
-            f = false;
-            s = true;
+        else {
+            if (str[i] == ' ') {
+                f = false;
+                s = true;
+            }
         }
         i++;
     }
-
     return w;
 }
 
 unsigned int faStr3(const char *str) {
-        int i = 0;
+    int i = 0;
     int w = 0;
-    int sym = 0;
+    double sym = 0;
     bool f = false;
-    int x = 0;
-
+    double x = 0;
     while (str[i] == ' ' && str[i] != '\0') {
         i++;
     }
-
     while (str[i] != '\0') {
         if (str[i] != ' ') {
             sym++;
@@ -94,12 +96,13 @@ unsigned int faStr3(const char *str) {
             w++;
             int k = i;
         }
-        else if (str[i] == ' ') {
-            f = false;
+        else {
+            if (str[i] == ' ') {
+                f = false;
+            }
         }
         i++;
     }
-
-    x = int(double(sym) / w + 0.5);
+    x = round(sym / w);
     return x;
 }
